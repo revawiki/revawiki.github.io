@@ -167,6 +167,38 @@ FEATURED_WORK = [
             "Avoids dependency on HCL syntax for routine changes, so even an engineer who isn't a Terraform expert can safely make edits through YAML",
         ],
     },
+    {
+        "name": "Multi-Tenant ECS Platform Migration",
+        "tagline": "Decoupling a single-tenant, one-instance-per-client product into a shared, multi-tenant container platform.",
+        "role": "Associated with PT Telkom Indonesia Tbk",
+        "challenge": (
+            "The product started as an on-premises, docker-based installation deployed per "
+            "client. As the customer base grew, it moved to AWS Singapore, the closest region "
+            "available at the time since AWS Jakarta had only just been introduced, but kept the "
+            "same one-to-one model: every new client meant provisioning a dedicated EC2 instance. "
+            "By the time this initiative began, that approach had grown past 100 EC2 deployments. "
+            "The problem wasn't only cost: every new instance added operational overhead too, "
+            "another server to patch, monitor, and maintain individually, none of it shared "
+            "across clients."
+        ),
+        "action": (
+            "For a quick win, we redesigned the platform around a cloud-native, ECS-based "
+            "container orchestration model rather than Kubernetes, since the team didn't yet have "
+            "deep Kubernetes expertise at the time and ECS offered a faster path to multi-tenancy "
+            "without that learning curve. Each client's workload was decoupled from its own "
+            "dedicated EC2 instance into a shared, multi-tenant container platform, and the "
+            "underlying infrastructure was migrated from AWS Singapore to the newly available AWS "
+            "Jakarta region in the same initiative. Deployment was automated through a Bitbucket "
+            "CI/CD pipeline that also introduced a DevSecOps stage, baking security scanning into "
+            "the release process itself rather than treating it as a separate, after-the-fact step."
+        ),
+        "diagram": "static/img/telkom-transformation-phases.png",
+        "result": [
+            {"metric": "~70%", "label": "AWS infrastructure cost reduction, from both the Jakarta migration and refactoring away legacy, per-client provisioning"},
+            {"metric": "2x", "label": "Faster deployments, cut from 10 to 5 minutes, via Bitbucket CI/CD"},
+            {"metric": "1→N", "label": "Removed the one-instance-per-client ceiling by decoupling workloads onto shared ECS infrastructure"},
+        ],
+    },
 ]
 
 EXPERIENCE = [
@@ -194,7 +226,7 @@ EXPERIENCE = [
             {"category": "ITSM & Documentation", "items": ["SharePoint"]},
             {"category": "Collaboration", "items": ["Microsoft Teams", "WhatsApp"]},
         ],
-        "featured_link": True,
+        "featured_work_index": 1,
     },
     {
         "company": "PT HM Sampoerna Tbk.",
@@ -221,6 +253,7 @@ EXPERIENCE = [
             {"category": "ITSM & Documentation", "items": ["Confluence", "SharePoint", "ServiceNow"]},
             {"category": "Collaboration", "items": ["Microsoft Teams"]},
         ],
+        "featured_work_index": 2,
     },
     {
         "company": "PT Telkom Indonesia Tbk",
@@ -246,6 +279,7 @@ EXPERIENCE = [
             {"category": "ITSM & Documentation", "items": ["Confluence", "Notion", "Jira"]},
             {"category": "Collaboration", "items": ["Slack", "Discord"]},
         ],
+        "featured_work_index": 3,
     },
     {
         "company": "PT Telkom Indonesia Tbk",
