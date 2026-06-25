@@ -9,6 +9,8 @@ PROFILE = {
     "instagram": "https://www.instagram.com/revawiki/",
     "whatsapp": "https://wa.me/6285714602966",
     "credly": "https://www.credly.com/users/reva-hristo-wiki-fonseca/badges/credly",
+    "resume": "static/assets/Reva-Wiki-CV.pdf",
+    "photo": None,
     "summary": (
         "IT Infrastructure & AIOps engineer with 7+ years architecting and operating "
         "enterprise-scale cloud infrastructure for B2B and B2C production systems serving "
@@ -19,41 +21,31 @@ PROFILE = {
     ),
 }
 
-STACK = [
+DOMAIN_KNOWLEDGE = [
     {
         "group": "AIOps & AI Automation",
-        "items": ["Agent Swarm", "RAG & Knowledge Base", "MCP Server", "Human-in-the-Loop",
-                   "Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "Dify",
-                   "n8n", "UiPath", "Power Platform"],
+        "items": ["Agent Swarm", "RAG & Knowledge Base", "MCP Server", "Human-in-the-Loop", "Guardrails"],
     },
     {
         "group": "Cloud Platforms",
-        "items": ["AWS", "Azure", "GCP", "Alibaba Cloud", "Digital Ocean"],
+        "items": ["Container Orchestration", "Hybrid Architecture", "Infrastructure as Code", "Cost Optimization"],
     },
     {
-        "group": "Infrastructure & Orchestration",
-        "items": ["Kubernetes", "Docker", "Terraform", "Ansible", "Puppet"],
+        "group": "DevOps",
+        "items": ["CI/CD Pipeline", "GitOps Workflow", "Zero-Downtime Deployment", "Monitoring, Logging & Traceability"],
     },
-    {
-        "group": "CI/CD & DevOps",
-        "items": ["GitOps Workflow", "Zero-Downtime Deployment", "Bitbucket Pipeline", "Jenkins", "GitLab"],
-    },
-    {
-        "group": "Observability",
-        "items": ["Grafana", "Datadog", "New Relic", "Elastic", "Prometheus", "PagerDuty"],
-    },
-    {
-        "group": "Security & DevSecOps",
-        "items": ["Guardrails", "Sonarqube", "Snyk", "Trivy", "Jfrog", "Teleport", "Vault", "Burpsuite"],
-    },
-    {
-        "group": "Scripting & Languages",
-        "items": ["Python", "Bash", "PowerShell", "Go"],
-    },
-    {
-        "group": "ITSM & Documentation",
-        "items": ["ServiceNow", "BMC Remedy", "Confluence", "Notion", "SharePoint"],
-    },
+]
+
+TOOLS = [
+    {"group": "AI Automation", "items": ["Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "Dify", "n8n", "UIPath", "Power Platform"]},
+    {"group": "Cloud", "items": ["AWS", "Azure", "GCP", "Alibaba Cloud", "Digital Ocean"]},
+    {"group": "Orchestration & Containers", "items": ["Kubernetes", "Docker"]},
+    {"group": "IaC & Config Management", "items": ["Terraform", "Ansible", "Puppet"]},
+    {"group": "CI/CD", "items": ["Bitbucket Pipeline", "Jenkins", "GitLab"]},
+    {"group": "Observability", "items": ["Grafana", "Datadog", "New Relic", "Elastic", "Prometheus", "PagerDuty"]},
+    {"group": "DevSecOps", "items": ["Brinqa", "Faradaysec", "Sonarqube", "Snyk", "Trivy", "Jfrog", "Teleport", "Vault", "Burpsuite"]},
+    {"group": "Scripting & Languages", "items": ["Python", "Bash", "PowerShell", "Go"]},
+    {"group": "ITSM & Documentation", "items": ["ServiceNow", "BMC Remedy", "Confluence", "Notion", "SharePoint"]},
 ]
 
 FEATURED_WORK = [
@@ -128,7 +120,6 @@ EXPERIENCE = [
         "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=techmahindra.com",
         "role": "Senior System Engineer",
         "period": "January 2025 – Present",
-        "location": "Jakarta, Indonesia",
         "narrative": (
             "Directing AIOps R&D for one of Indonesia's largest telco cloud operations, leading "
             "a 4-engineer team to design AI-driven automation across 20+ AWS accounts and 10+ "
@@ -145,7 +136,6 @@ EXPERIENCE = [
         "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=sampoerna.com",
         "role": "Senior DevOps Engineer",
         "period": "June 2024 – December 2024",
-        "location": "Jakarta, Indonesia",
         "narrative": (
             "Led a 7-engineer team through a console-to-Terraform migration with consistent GitOps "
             "branching, standardized 40+ legacy AWS accounts to global governance standards, and "
@@ -156,10 +146,9 @@ EXPERIENCE = [
     {
         "company": "PT Telkom Indonesia Tbk",
         "company_url": "https://www.telkom.co.id",
-        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=telkom.co.id",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=www.telkom.co.id",
         "role": "DevOps Lead",
         "period": "April 2022 – May 2024",
-        "location": "Jakarta, Indonesia",
         "narrative": (
             "Promoted to lead a 4-engineer DevOps team, architecting a multi-tenant AWS ECS "
             "platform off 100+ monolithic EC2 deployments, with a regional migration and CI/CD "
@@ -170,10 +159,9 @@ EXPERIENCE = [
     {
         "company": "PT Telkom Indonesia Tbk",
         "company_url": "https://www.telkom.co.id",
-        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=telkom.co.id",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=www.telkom.co.id",
         "role": "Technical Support Engineer",
         "period": "August 2020 – April 2022",
-        "location": "Jakarta, Indonesia",
         "narrative": (
             "Supported a cloud incubation initiative, building Terraform and Ansible-provisioned "
             "pipelines that significantly cut deployment time, and introducing Grafana-based "
@@ -187,7 +175,6 @@ EXPERIENCE = [
         "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=brin.go.id",
         "role": "System Administrator",
         "period": "June 2020 – August 2020",
-        "location": "Bogor, Indonesia",
         "narrative": (
             "Rebuilt a legacy HPC lab by repairing 20+ broken nodes, restoring research capacity "
             "without new hardware spend."
@@ -200,7 +187,6 @@ EXPERIENCE = [
         "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=brin.go.id",
         "role": "Junior System Administrator",
         "period": "February 2019 – December 2019",
-        "location": "Bogor, Indonesia",
         "narrative": (
             "Rolled out Puppet-based configuration management across a 40+ node HPC environment, "
             "replacing ad-hoc manual configuration with consistent, repeatable infrastructure state."
@@ -213,7 +199,6 @@ EXPERIENCE = [
         "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=griyamitrapersada.com",
         "role": "IT Support Lead",
         "period": "July 2018 – September 2018",
-        "location": "Bogor, Indonesia",
         "narrative": (
             "Led a 5-person on-site IT support team across 50+ end-devices through the Asian "
             "Games event, ensuring zero-downtime operations under high-visibility pressure."
