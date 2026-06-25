@@ -194,6 +194,14 @@ a:hover { border-bottom-color: var(--c-black); }
 .catalog-card[open] .catalog-expand::after { content: ""; }
 .catalog-body { padding: 0 28px 28px; border-top: 1px solid var(--c-grey-200); padding-top: 20px; }
 .catalog-note { font-size: 0.8rem; color: var(--c-grey-600); margin-top: 16px; }
+.catalog-diagram {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--c-grey-200);
+  border-radius: var(--radius);
+  margin: 16px 0;
+  display: block;
+}
 
 .pillar-grid {
   display: grid;

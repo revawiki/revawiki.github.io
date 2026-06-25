@@ -48,66 +48,35 @@ TOOLS = [
 
 FEATURED_WORK = [
     {
-        "name": "Unified L1 Autopilot",
-        "tagline": "An AI-driven operations layer turning reactive IT Ops into autonomous, human-governed triage and remediation.",
-        "role": "R&D Lead, Tech Mahindra — Jan 2025 to Present",
-        "problem": (
-            "Scaling enterprise IT operations at the pace of the business inevitably runs into a "
-            "‘human ceiling’: operational reliability becomes hostage to manual triage and the "
-            "limits of human fatigue. This creates a ‘linear trap’ where growth is tethered "
-            "to headcount, increasing systemic risk and operational noise with every new integration. "
-            "I led the R&D effort to break that trap by shifting from manual, ticket-driven operations "
-            "to AI-supported, and eventually autonomous, orchestration."
+        "name": "Unified L1 Copilot Platform",
+        "tagline": "A centralized AI ecosystem combining RAG, memory, and an MCP farm to unify various automation workflows, turning reactive IT Ops into autonomous, human-governed triage and remediation.",
+        "role": "Associated with Tech Mahindra",
+        "challenge": (
+            "Enterprise IT operations rarely fail from a single cause. They're stretched across "
+            "multiple concurrent workloads, run by teams with limited headcount, and pushed to "
+            "process a high volume of daily change requests, all while gaps in observability "
+            "oversight make problems harder to catch early. Together, these pressures compound "
+            "manual triage fatigue, and in the long run, this risks business continuity if a "
+            "critical incident slips through unnoticed."
         ),
-        "pillars": [
-            {
-                "title": "Intelligent Triage & Predictive Risk Mitigation",
-                "desc": (
-                    "Real-time telemetry analysis pinpoints root causes automatically, converting "
-                    "reactive troubleshooting into predictive, data-driven detection, and "
-                    "neutralizing misconfigurations before they impact service availability."
-                ),
-            },
-            {
-                "title": "Fiscal Governance & Benchmarking",
-                "desc": (
-                    "Automated optimization workflows and resource scheduling realize significant "
-                    "compute savings, backed by continuous performance benchmarking against "
-                    "architectural best practices."
-                ),
-            },
-            {
-                "title": "Autonomous Security & Self-Healing",
-                "desc": (
-                    "Continuous compliance checks against security and configuration baselines "
-                    "eliminate manual audit cycles, scaling from automated patching toward "
-                    "autonomous issue remediation."
-                ),
-            },
-            {
-                "title": "Augmented Engineering Workflows",
-                "desc": (
-                    "Context-aware knowledge retrieval auto-generates documentation (MOPs, "
-                    "playbooks, RCAs), while every AI-proposed action is queued for human review "
-                    "before execution — keeping institutional control intact."
-                ),
-            },
-        ],
-        "approach": (
-            "Rather than building a single monolithic bot, the Autopilot is structured around the "
-            "same roles and responsibilities a mature IT operations team already has — a "
-            "Technical Operations Engineer, a Service Desk Analyst, a SOC Engineer, a Technical "
-            "Writer, and a FinOps Analyst — each mapped to a distinct, scoped capability. This "
-            "keeps coverage systematic and accountability clear as the system grows, following a "
-            "deliberate crawl-walk-run rollout rather than a single 'big bang' deployment."
+        "action": (
+            "To tackle these challenges, we built a centralized AIOps engine that brings IT "
+            "infrastructure monitoring, ITSM/CMDB, internal documentation, and communication "
+            "channels together into a single correlation layer, instead of leaving them as "
+            "disconnected tools each engineer has to check separately. This consolidation matters "
+            "because it lets telemetry and tickets feed one AI model that cross-references a "
+            "knowledge base and memory store for context, then executes through an MCP-connected "
+            "automation layer. Every action it proposes is still routed through a human "
+            "approve/reject step before reaching production, so the system closes blind spots in "
+            "observability without giving up institutional control over what actually runs."
         ),
-        "outcomes": [
-            {"metric": "4x", "label": "Faster MTTR via AI-driven autonomous diagnostics"},
-            {"metric": "60%", "label": "Compute cost reduction from automated resource governance"},
-            {"metric": "IDR 79B+", "label": "Annual revenue loss prevented via automated failover"},
-            {"metric": "75%", "label": "Toil elimination on backup and recovery test cycles"},
+        "diagram": "static/img/AIOps Framework.jpg",
+        "result": [
+            {"metric": "4x", "label": "Faster MTTR via AI-assisted anomaly triage, noise reduction, and root-cause analysis"},
+            {"metric": "2x", "label": "Faster throughput on change request execution, through an automated deployment plan review process"},
+            {"metric": "IDR 79B+", "label": "Annual revenue loss prevented via automated failover, avoiding recurrent outage incidents"},
+            {"metric": "20%", "label": "Weekly engineering time reclaimed (1 day saved per 5-day week) through automated report generation"},
         ],
-        "note": "Figures reflect actual client adoption; results may vary based on internal scope.",
     },
 ]
 

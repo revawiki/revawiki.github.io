@@ -35,9 +35,8 @@ def build():
     (OUTPUT_DIR / "index.html").write_text(html, encoding="utf-8")
 
     output_static = OUTPUT_DIR / "static"
-    if output_static.exists():
-        shutil.rmtree(output_static)
-    shutil.copytree(STATIC_DIR, output_static)
+    shutil.copytree(STATIC_DIR, output_static, dirs_exist_ok=True,
+                     ignore=shutil.ignore_patterns("desktop.ini"))
 
     (OUTPUT_DIR / ".nojekyll").touch()
 

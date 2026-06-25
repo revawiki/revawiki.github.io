@@ -111,10 +111,16 @@
               <span class="catalog-expand">View details ↓</span>
             </summary>
             <div class="catalog-body">
-              <h4>The Problem</h4>
-              <p>{{ w.problem }}</p>
+              <h4>Challenge</h4>
+              <p>{{ w.challenge }}</p>
 
-              <h4>Strategic Pillars</h4>
+              <h4>Action</h4>
+              {% if w.diagram %}
+              <img src="{{ w.diagram }}" alt="{{ w.name }} architecture diagram" class="catalog-diagram">
+              {% endif %}
+              <p>{{ w.action }}</p>
+
+              {% if w.pillars %}
               <div class="pillar-grid">
                 {% for pillar in w.pillars %}
                 <div class="pillar-card">
@@ -123,20 +129,20 @@
                 </div>
                 {% endfor %}
               </div>
+              {% endif %}
 
-              <h4>Approach</h4>
-              <p>{{ w.approach }}</p>
-
-              <h4>Outcomes</h4>
+              <h4>Result</h4>
               <div class="outcome-grid">
-                {% for o in w.outcomes %}
+                {% for o in w.result %}
                 <div class="outcome-card">
                   <p class="outcome-metric">{{ o.metric }}</p>
                   <p class="outcome-label">{{ o.label }}</p>
                 </div>
                 {% endfor %}
               </div>
+              {% if w.note %}
               <p class="catalog-note">{{ w.note }}</p>
+              {% endif %}
             </div>
           </details>
           {% endfor %}
