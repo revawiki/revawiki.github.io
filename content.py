@@ -39,13 +39,13 @@ DOMAIN_KNOWLEDGE = [
 TOOLS = [
     {"group": "AI Automation", "items": ["Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "Dify", "n8n", "UIPath", "Power Platform"]},
     {"group": "Cloud", "items": ["AWS", "Azure", "GCP", "Alibaba Cloud", "Digital Ocean"]},
-    {"group": "Orchestration & Containers", "items": ["Kubernetes", "Docker"]},
-    {"group": "IaC & Config Management", "items": ["Terraform", "Ansible", "Puppet"]},
-    {"group": "CI/CD", "items": ["Bitbucket Pipeline", "Jenkins", "GitLab"]},
-    {"group": "Observability", "items": ["Grafana", "Datadog", "New Relic", "Elastic", "Prometheus", "PagerDuty"]},
-    {"group": "DevSecOps", "items": ["Brinqa", "Faradaysec", "Sonarqube", "Snyk", "Trivy", "Jfrog", "Teleport", "Vault", "Burpsuite"]},
+    {"group": "Orchestration & Containers", "items": ["Kubernetes", "Docker", "Containerd", "Amazon ECS", "Amazon EKS"]},
+    {"group": "IaC & Config Management", "items": ["Terraform", "Ansible", "Puppet", "Amazon CloudFormation", "Helm", "Foreman", "Kickstart"]},
+    {"group": "CI/CD", "items": ["Bitbucket Pipeline", "Jenkins", "GitLab", "GitLab Runner", "Flux", "CloudBees CI"]},
+    {"group": "Observability", "items": ["Grafana", "Datadog", "New Relic", "Elastic", "Prometheus", "PagerDuty", "Amazon CloudWatch", "OpsGenie", "Fluentbit", "OpenTelemetry"]},
+    {"group": "DevSecOps", "items": ["Brinqa", "Faradaysec", "Sonarqube", "Snyk", "Trivy", "Jfrog", "Teleport", "Vault", "Burpsuite", "Invicti", "OWASP ZAP", "Nikto", "Dependency Check", "DefectDojo", "git-secrets", "Nuclei", "Polaris", "Soteri"]},
     {"group": "Scripting & Languages", "items": ["Python", "Bash", "PowerShell", "Go"]},
-    {"group": "ITSM & Documentation", "items": ["ServiceNow", "BMC Remedy", "Confluence", "Notion", "SharePoint"]},
+    {"group": "ITSM & Documentation", "items": ["ServiceNow", "BMC Remedy", "Confluence", "Notion", "SharePoint", "Jira", "Trello"]},
 ]
 
 FEATURED_WORK = [
@@ -121,13 +121,23 @@ EXPERIENCE = [
         "role": "Senior System Engineer",
         "period": "January 2025 – Present",
         "narrative": (
-            "Directing AIOps R&D for one of Indonesia's largest telco cloud operations, leading "
-            "a 4-engineer team to design AI-driven automation across 20+ AWS accounts and 10+ "
-            "Kubernetes clusters — covering anomaly detection, AI-assisted root-cause analysis, "
-            "pre-deployment safeguards, and revenue-protecting failover automation."
+            "Leading R&D for AIOps and automation within the IT Cloud Operations team supporting "
+            "one of Indonesia's largest telecommunications providers, directing a 4-engineer team "
+            "across 20+ AWS accounts and 10+ Kubernetes clusters. Built automatic anomaly detection "
+            "and AI-assisted root-cause analysis that cut MTTD to ≤5 minutes and MTTR to ≤10 minutes, "
+            "introduced an automatic MOP checker that nearly tripled change-request throughput, and "
+            "developed an AWS Direct Connect failover solution preventing IDR 79B+ in yearly revenue "
+            "loss. Unified these workflows into a single agentic AI system with RAG, MCP servers, and "
+            "human-in-the-loop governance — work recognized with Tech Mahindra's Innovator of the "
+            "Month award."
         ),
-        "stack": ["AWS", "Kubernetes", "RAG & Knowledge Base", "MCP Server", "Agent Swarm",
-                    "Human-in-the-Loop", "Grafana", "Python"],
+        "stack": ["AWS", "Amazon RDS", "RDS for PostgreSQL", "RDS for MySQL", "Amazon Linux", "Python",
+                   "Bash", "n8n", "Power Platform", "Dify", "Amazon Bedrock", "Microsoft Copilot Studio",
+                   "Azure AI Foundry", "Docker", "Containerd", "Kubernetes", "Amazon EKS", "Amazon ECS",
+                   "Terraform", "Amazon CloudFormation", "Helm", "Amazon SSM", "GitLab Enterprise",
+                   "AWS CodeCommit", "GitLab Runner", "Jenkins", "Flux", "Amazon ECR", "Grafana",
+                   "Datadog", "Amazon CloudWatch", "Fluentbit", "OpenTelemetry", "Prometheus",
+                   "SharePoint", "Microsoft Teams", "WhatsApp"],
         "featured_link": True,
     },
     {
@@ -137,11 +147,22 @@ EXPERIENCE = [
         "role": "Senior DevOps Engineer",
         "period": "June 2024 – December 2024",
         "narrative": (
-            "Led a 7-engineer team through a console-to-Terraform migration with consistent GitOps "
-            "branching, standardized 40+ legacy AWS accounts to global governance standards, and "
-            "drove SEA-region cost optimization while automating away recurring service-request toil."
+            "Maintained SLAs for HM Sampoerna's application portfolio (AYO SRC, promotional sites, "
+            "internal tools) as part of the IT Solution Architect team, leading a 7-engineer group "
+            "through a console-to-Terraform migration with consistent GitOps branching and "
+            "standardizing 40+ legacy AWS accounts to global Philip Morris International compliance "
+            "standards. Transformed manual ClickOps processes into automated workflows, cutting "
+            "~1-2 hours of daily repetitive tasks via Jenkins automation, while driving SEA-region "
+            "cloud costs down ~55% through regular cost evaluation and optimization — alongside "
+            "mentoring junior engineers and improving the team's documentation practices."
         ),
-        "stack": ["AWS", "Terraform", "GitOps Workflow", "Jenkins", "Security & Governance"],
+        "stack": ["AWS", "Amazon Aurora MySQL", "Amazon DocumentDB", "Amazon Linux", "Python", "Bash",
+                   "PowerShell", "Docker", "Kubernetes", "Amazon ECS", "Terraform", "Amazon SSM",
+                   "Amazon Secrets Manager", "Vault", "OpenVPN", "Bitbucket", "Jenkins", "CloudBees CI",
+                   "Amazon ECR", "Jfrog Artifactory", "Soteri", "Polaris", "Trivy", "Jfrog Xray",
+                   "Sonarqube", "Invicti", "Brinqa", "Grafana", "Elastic", "Amazon CloudWatch",
+                   "New Relic", "PagerDuty", "OpsGenie", "Confluence", "SharePoint", "Microsoft Teams",
+                   "ServiceNow"],
     },
     {
         "company": "PT Telkom Indonesia Tbk",
@@ -150,11 +171,23 @@ EXPERIENCE = [
         "role": "DevOps Lead",
         "period": "April 2022 – May 2024",
         "narrative": (
-            "Promoted to lead a 4-engineer DevOps team, architecting a multi-tenant AWS ECS "
-            "platform off 100+ monolithic EC2 deployments, with a regional migration and CI/CD "
-            "rollout that cut both infrastructure cost and deployment time substantially."
+            "Promoted to lead the 4-engineer Infrastructure (DevOps) team for Telkom's Netmonk "
+            "product suite (Netmonk Prime, Netmonk HI, DTP), architecting a multi-tenant AWS ECS "
+            "platform off 100+ monolithic EC2 deployments and rearchitecting the regional footprint "
+            "from Singapore to Jakarta for a ~70% infrastructure cost reduction. Built CI/CD "
+            "automation via Bitbucket pipelines that cut deployment time from ~10 to ~5 minutes, "
+            "while improving deployment frequency, lead time, and change failure rate through "
+            "provisioning automation, resource/log/trace monitoring, and IAM-driven security "
+            "integration across the development lifecycle."
         ),
-        "stack": ["AWS ECS", "Bitbucket Pipeline", "Cloud Migration"],
+        "stack": ["AWS", "Digital Ocean", "Aiven", "MongoDB Atlas", "Amazon RDS", "Ubuntu",
+                   "Amazon Linux", "Windows Server", "PostgreSQL", "MySQL", "MongoDB", "InfluxDB",
+                   "Prometheus", "Timescale", "Redis", "Kafka", "OpenSearch", "Python", "Bash", "Go",
+                   "Docker", "Kubernetes", "Amazon ECS", "Amazon EKS", "Terraform", "Ansible", "Consul",
+                   "Vault", "Teleport", "AWS Systems Manager", "Bitbucket", "GitLab", "Bitbucket Pipeline",
+                   "Jenkins", "Dockerhub", "Nuclei", "git-secrets", "Dependency Check", "Snyk", "Trivy",
+                   "Sonarqube", "OWASP ZAP", "Nikto", "Faraday", "DefectDojo", "Grafana", "Datadog",
+                   "Confluence", "Notion", "Jira", "Slack", "Discord"],
     },
     {
         "company": "PT Telkom Indonesia Tbk",
@@ -163,11 +196,14 @@ EXPERIENCE = [
         "role": "Technical Support Engineer",
         "period": "August 2020 – April 2022",
         "narrative": (
-            "Supported a cloud incubation initiative, building Terraform and Ansible-provisioned "
-            "pipelines that significantly cut deployment time, and introducing Grafana-based "
-            "observability that improved incident response."
+            "Provided technical support and network-monitoring deployment services for Netmonk "
+            "clients ranging from small businesses to large enterprises — installing, configuring, "
+            "and troubleshooting Netmonk Basic, training users, and prototyping solutions while "
+            "feeding client feedback back to the product team. Built Terraform and Ansible-provisioned "
+            "pipelines that cut deployment time from ~40 to ~10 minutes, and introduced Grafana-based "
+            "observability that reduced MTTR from ~30 to ~15 minutes."
         ),
-        "stack": ["Terraform", "Ansible", "Grafana"],
+        "stack": ["AWS", "Ubuntu", "Windows Server", "Grafana", "Jira", "Slack", "Trello"],
     },
     {
         "company": "BRIN — Aviation Technology Research Center",
@@ -176,10 +212,14 @@ EXPERIENCE = [
         "role": "System Administrator",
         "period": "June 2020 – August 2020",
         "narrative": (
-            "Rebuilt a legacy HPC lab by repairing 20+ broken nodes, restoring research capacity "
-            "without new hardware spend."
+            "Built a 50-node HPC lab from scratch for Pustekbang's Aviation Technology Research "
+            "Center — planning the network topology, repairing or replacing 20+ broken nodes to "
+            "avoid new hardware spend, automating OS installation and configuration across the "
+            "cluster, and setting up rack layout, cable management, and remote monitoring, with full "
+            "documentation of every node's status."
         ),
-        "stack": ["HPC Infrastructure", "Hardware Diagnostics"],
+        "stack": ["CentOS", "Ubuntu", "Windows 10", "Kickstart", "C3 (Cluster Control)", "Supermicro",
+                   "Cisco Switch", "LAN", "WLAN"],
     },
     {
         "company": "BRIN — Informatics Research Center",
@@ -188,10 +228,14 @@ EXPERIENCE = [
         "role": "Junior System Administrator",
         "period": "February 2019 – December 2019",
         "narrative": (
-            "Rolled out Puppet-based configuration management across a 40+ node HPC environment, "
-            "replacing ad-hoc manual configuration with consistent, repeatable infrastructure state."
+            "Assisted in maintaining a 40+ node HPC lab for BRIN's Informatics Research Center — "
+            "running regular checks to identify and repair damaged nodes, automating new node and "
+            "cluster installations, and rolling out Puppet-based configuration management to keep "
+            "software and configuration consistent across the cluster, with daily condition reports "
+            "on lab infrastructure."
         ),
-        "stack": ["Puppet", "Configuration Management"],
+        "stack": ["CentOS", "Ubuntu", "Windows Hyper-V", "Puppet", "Kickstart", "C3 (Cluster Control)",
+                   "Foreman", "Cisco Switch", "Aruba Switch", "MikroTik", "LAN", "WLAN"],
     },
     {
         "company": "PT Griya Mitra Persada",
@@ -200,10 +244,13 @@ EXPERIENCE = [
         "role": "IT Support Lead",
         "period": "July 2018 – September 2018",
         "narrative": (
-            "Led a 5-person on-site IT support team across 50+ end-devices through the Asian "
-            "Games event, ensuring zero-downtime operations under high-visibility pressure."
+            "Led a 5-person on-site IT support team responsible for 50+ end-devices (laptops, "
+            "printers, PCs, copiers) at Pakansari Stadium during the 2018 Asian Games — installing, "
+            "testing, and auditing devices, coordinating with other divisions during events, and "
+            "keeping every device operational throughout the matches."
         ),
-        "stack": ["IT Support", "End-Device Management"],
+        "stack": ["Windows 10", "Windows 7", "Canon Printers", "HP Printers & Copiers",
+                   "HP Laptops & AIO PCs", "TP-Link Access Point", "LAN", "WLAN"],
     },
 ]
 
