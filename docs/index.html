@@ -168,7 +168,11 @@
 
               
 
+              
+
               <h4>Result</h4>
+              
+              
               <div class="outcome-grid">
                 
                 <div class="outcome-card">
@@ -192,6 +196,86 @@
                 </div>
                 
               </div>
+              
+              
+            </div>
+          </details>
+          
+          <details class="catalog-card" id="work-2">
+            <summary>
+              <h3>YAML-based Terraform Standardization</h3>
+              <p class="catalog-role">Associated with PT HM Sampoerna Tbk.</p>
+              <p class="catalog-tagline">Replacing manual console changes with a single, YAML-configured Terraform codebase, standardizing infrastructure provisioning across a three-branch dev, staging, and production GitOps flow enforced by Terraform Enterprise.</p>
+              <span class="catalog-expand">View details ↓</span>
+            </summary>
+            <div class="catalog-body">
+              <h4>Challenge</h4>
+              <p>Global compliance mandated provisioning through Terraform Enterprise's GitOps flow: a single repository with three branches for dev, staging, and production. Migrating the signature B2B workload, the company's main revenue application, meant inheriting years of unstandardized resources from earlier, less mature provisioning practices: inconsistent naming conventions and stateful or hard-to-replace resources such as IAM roles and policies, KMS encryption keys, and production databases, where an unintended destroy-and-recreate cycle risked data loss or downtime. Terraform's default behavior treats configuration drift as a trigger to replace a resource, which directly conflicted with a zero-downtime requirement from the business. Compounding this, resource existence itself was inconsistent across environments: some resources existed in dev and staging but not production, others only in one environment, a byproduct of ad hoc provisioning from before the migration began.</p>
+
+              <h4>Action</h4>
+              
+              <p>Rather than hand-writing Terraform per environment, which would have meant three times the code and three times the drift risk, we built a config-based approach: a single Terraform codebase driven by per-environment YAML configuration, with each resource looped over via `for_each` and filtered by a dedicated environment flag. Terraform Enterprise injects the active workspace's environment as a `TF_VAR_env` variable per its standard variable convention, which the codebase reads as `var.env` to filter which resources apply. A dev-only resource is simply skipped once code promotes to staging, no code change required. The Terraform code itself only had to be written once, and a routine change never touches a `.tf` file, only the YAML configuration, cutting the chance of accidental breakage.</p>
+
+              
+              <div class="code-samples">
+                
+                <div class="code-block">
+                  <p class="code-filename">config.yaml [SAMPLE]</p>
+                  <pre><code>buckets:
+  app-logs:
+    envs: [&#34;dev&#34;, &#34;staging&#34;, &#34;prod&#34;]
+    versioning: true
+  legacy-cache:
+    envs: [&#34;staging&#34;, &#34;prod&#34;]
+    versioning: false
+  scratch-dev-only:
+    envs: [&#34;dev&#34;]
+    force_destroy: true</code></pre>
+                </div>
+                
+                <div class="code-block">
+                  <p class="code-filename">main.tf [SAMPLE]</p>
+                  <pre><code>variable &#34;env&#34; {
+  type        = string
+  description = &#34;Target environment, injected by Terraform Enterprise as TF_VAR_env per workspace&#34;
+}
+
+locals {
+  config = yamldecode(file(&#34;${path.module}/config.yaml&#34;))
+
+  buckets = {
+    for name, cfg in local.config.buckets :
+    name =&gt; cfg if contains(cfg.envs, var.env)
+  }
+}
+
+resource &#34;aws_s3_bucket&#34; &#34;this&#34; {
+  for_each = local.buckets
+
+  bucket        = &#34;${each.key}-${var.env}&#34;
+  force_destroy = try(each.value.force_destroy, false)
+
+  tags = {
+    Environment = var.env
+  }
+}</code></pre>
+                </div>
+                
+              </div>
+              
+
+              
+
+              <h4>Result</h4>
+              
+              <p>With this approach, compliance is met without blocking the business: standardization concerns, like enforcing consistent bucket settings everywhere, can be tackled as a separate initiative instead of bundling every fix into the migration itself.</p>
+              
+              
+              <p class="result-label">Benefits of this approach:</p>
+              <ul class="result-list">
+                <li>Standardizes infrastructure provisioning across all three environments</li><li>Brings every resource into Terraform Enterprise GitOps compliance</li><li>Removes the need for environment-specific Terraform code</li><li>Avoids dependency on HCL syntax for routine changes, so even an engineer who isn't a Terraform expert can safely make edits through YAML</li>
+              </ul>
+              
               
             </div>
           </details>

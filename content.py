@@ -78,6 +78,95 @@ FEATURED_WORK = [
             {"metric": "20%", "label": "Weekly engineering time reclaimed (1 day saved per 5-day week) through automated report generation"},
         ],
     },
+    {
+        "name": "YAML-based Terraform Standardization",
+        "tagline": (
+            "Replacing manual console changes with a single, YAML-configured Terraform codebase, "
+            "standardizing infrastructure provisioning across a three-branch dev, staging, and "
+            "production GitOps flow enforced by Terraform Enterprise."
+        ),
+        "role": "Associated with PT HM Sampoerna Tbk.",
+        "challenge": (
+            "Global compliance mandated provisioning through Terraform Enterprise's GitOps flow: "
+            "a single repository with three branches for dev, staging, and production. Migrating "
+            "the signature B2B workload, the company's main revenue application, meant inheriting "
+            "years of unstandardized resources from earlier, less mature provisioning practices: "
+            "inconsistent naming conventions and stateful or hard-to-replace resources such as IAM "
+            "roles and policies, KMS encryption keys, and production databases, where an "
+            "unintended destroy-and-recreate cycle risked data loss or downtime. Terraform's "
+            "default behavior treats configuration drift as a trigger to replace a resource, which "
+            "directly conflicted with a zero-downtime requirement from the business. Compounding "
+            "this, resource existence itself was inconsistent across environments: some resources "
+            "existed in dev and staging but not production, others only in one environment, a "
+            "byproduct of ad hoc provisioning from before the migration began."
+        ),
+        "action": (
+            "Rather than hand-writing Terraform per environment, which would have meant three "
+            "times the code and three times the drift risk, we built a config-based approach: a "
+            "single Terraform codebase driven by per-environment YAML configuration, with each "
+            "resource looped over via `for_each` and filtered by a dedicated environment flag. "
+            "Terraform Enterprise injects the active workspace's environment as a `TF_VAR_env` "
+            "variable per its standard variable convention, which the codebase reads as `var.env` "
+            "to filter which resources apply. A dev-only resource is simply skipped once code "
+            "promotes to staging, no code change required. The Terraform code itself only had to "
+            "be written once, and a routine change never touches a `.tf` file, only the YAML "
+            "configuration, cutting the chance of accidental breakage."
+        ),
+        "code_samples": [
+            {
+                "filename": "config.yaml [SAMPLE]",
+                "language": "yaml",
+                "code": (
+                    "buckets:\n"
+                    "  app-logs:\n"
+                    "    envs: [\"dev\", \"staging\", \"prod\"]\n"
+                    "    versioning: true\n"
+                    "  legacy-cache:\n"
+                    "    envs: [\"staging\", \"prod\"]\n"
+                    "    versioning: false\n"
+                    "  scratch-dev-only:\n"
+                    "    envs: [\"dev\"]\n"
+                    "    force_destroy: true"
+                ),
+            },
+            {
+                "filename": "main.tf [SAMPLE]",
+                "language": "hcl",
+                "code": (
+                    "variable \"env\" {\n"
+                    "  type        = string\n"
+                    "  description = \"Target environment, injected by Terraform Enterprise as TF_VAR_env per workspace\"\n"
+                    "}\n\n"
+                    "locals {\n"
+                    "  config = yamldecode(file(\"${path.module}/config.yaml\"))\n\n"
+                    "  buckets = {\n"
+                    "    for name, cfg in local.config.buckets :\n"
+                    "    name => cfg if contains(cfg.envs, var.env)\n"
+                    "  }\n"
+                    "}\n\n"
+                    "resource \"aws_s3_bucket\" \"this\" {\n"
+                    "  for_each = local.buckets\n\n"
+                    "  bucket        = \"${each.key}-${var.env}\"\n"
+                    "  force_destroy = try(each.value.force_destroy, false)\n\n"
+                    "  tags = {\n"
+                    "    Environment = var.env\n"
+                    "  }\n"
+                    "}"
+                ),
+            },
+        ],
+        "result_intro": (
+            "With this approach, compliance is met without blocking the business: standardization "
+            "concerns, like enforcing consistent bucket settings everywhere, can be tackled as a "
+            "separate initiative instead of bundling every fix into the migration itself."
+        ),
+        "result": [
+            "Standardizes infrastructure provisioning across all three environments",
+            "Brings every resource into Terraform Enterprise GitOps compliance",
+            "Removes the need for environment-specific Terraform code",
+            "Avoids dependency on HCL syntax for routine changes, so even an engineer who isn't a Terraform expert can safely make edits through YAML",
+        ],
+    },
 ]
 
 EXPERIENCE = [

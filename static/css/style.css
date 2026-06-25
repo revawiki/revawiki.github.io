@@ -203,6 +203,38 @@ a:hover { border-bottom-color: var(--c-black); }
   display: block;
 }
 
+.code-samples { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.code-block {
+  border: 1px solid var(--c-grey-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.code-filename {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  color: var(--c-grey-600);
+  background: var(--c-grey-100);
+  border-bottom: 1px solid var(--c-grey-200);
+}
+.code-block pre {
+  margin: 0;
+  padding: 14px;
+  overflow-x: auto;
+  background: var(--c-grey-50);
+}
+.code-block code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  color: var(--c-grey-800);
+  white-space: pre;
+}
+
+.result-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+.result-list { margin: 0; padding-left: 20px; }
+.result-list li { font-size: 0.95rem; color: var(--c-grey-800); margin-bottom: 8px; }
+
 .pillar-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

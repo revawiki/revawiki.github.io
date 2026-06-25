@@ -120,6 +120,17 @@
               {% endif %}
               <p>{{ w.action }}</p>
 
+              {% if w.code_samples %}
+              <div class="code-samples">
+                {% for sample in w.code_samples %}
+                <div class="code-block">
+                  <p class="code-filename">{{ sample.filename }}</p>
+                  <pre><code>{{ sample.code | e }}</code></pre>
+                </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+
               {% if w.pillars %}
               <div class="pillar-grid">
                 {% for pillar in w.pillars %}
@@ -132,6 +143,12 @@
               {% endif %}
 
               <h4>Result</h4>
+              {% if w.result_intro %}
+              <p>{{ w.result_intro }}</p>
+              {% endif %}
+              {% if w.result is string %}
+              <p>{{ w.result }}</p>
+              {% elif w.result[0] is mapping %}
               <div class="outcome-grid">
                 {% for o in w.result %}
                 <div class="outcome-card">
@@ -140,6 +157,12 @@
                 </div>
                 {% endfor %}
               </div>
+              {% else %}
+              <p class="result-label">Benefits of this approach:</p>
+              <ul class="result-list">
+                {% for item in w.result %}<li>{{ item }}</li>{% endfor %}
+              </ul>
+              {% endif %}
               {% if w.note %}
               <p class="catalog-note">{{ w.note }}</p>
               {% endif %}
