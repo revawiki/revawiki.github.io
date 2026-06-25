@@ -145,8 +145,9 @@ EXPERIENCE = [
         "period": "June 2024 – December 2024",
         "narrative": (
             "Maintained SLAs for HM Sampoerna's app portfolio, leading an engineering group through "
-            "a console-to-Terraform migration and standardizing legacy AWS accounts to PMI "
-            "compliance. Cut SEA cloud costs and automated daily repetitive tasks via Jenkins."
+            "a console-to-Terraform migration and standardizing legacy AWS accounts to Philip "
+            "Morris International compliance. Cut SEA cloud costs and automated daily repetitive "
+            "tasks via Jenkins."
         ),
         "stack": [
             {"category": "Cloud", "items": ["AWS"]},

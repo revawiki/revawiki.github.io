@@ -34,11 +34,11 @@
 
 {% macro cta_icons() -%}
 <a href="mailto:{{ profile.email }}" class="icon-btn" title="Email" aria-label="Email">{{ icon("mail") }}</a>
+<a href="{{ profile.whatsapp }}" class="icon-btn" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">{{ icon("whatsapp") }}</a>
 <a href="{{ profile.linkedin }}" class="icon-btn" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">{{ icon("linkedin") }}</a>
 <a href="{{ profile.github }}" class="icon-btn" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">{{ icon("github") }}</a>
 <a href="{{ profile.twitter }}" class="icon-btn" target="_blank" rel="noopener" title="Twitter / X" aria-label="Twitter / X">{{ icon("twitter") }}</a>
 <a href="{{ profile.instagram }}" class="icon-btn" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">{{ icon("instagram") }}</a>
-<a href="{{ profile.whatsapp }}" class="icon-btn" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">{{ icon("whatsapp") }}</a>
 {%- endmacro %}
 
   <header class="hero">
@@ -204,6 +204,7 @@
     <div class="container">
       <p>{{ profile.name }} — {{ profile.title }}</p>
       <nav class="cta-row">{{ cta_icons() }}</nav>
+      <p class="footer-tagline">Made with ☕ and ❤️, with (extra) help from Claude 🤖</p>
     </div>
   </footer>
 
