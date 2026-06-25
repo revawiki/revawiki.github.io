@@ -14,7 +14,7 @@ PROFILE = {
     "summary": (
         "A boy from a rural corner of Indonesia, now thriving to become the country's go-to AIOps "
         "expert, one automated workflow at a time. Grounded in years of cloud infrastructure work, "
-        "I'm growing into agentic AI to make IT operations more resilient, so engineers can spend "
+        "now growing into agentic AI to make IT operations more resilient, so engineers can spend "
         "less time firefighting and more time building."
     ),
 }
