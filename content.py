@@ -13,8 +13,9 @@ PROFILE = {
     "photo": None,
     "summary": (
         "Thriving to become the go-to AIOps expert in Indonesia, one automated workflow at a time. "
-        "Still learning the ropes of agentic AI, leaning on years of cloud infrastructure experience "
-        "to make IT operations a little less manual along the way."
+        "Grounded in years of cloud infrastructure work, I'm growing into agentic AI to make IT "
+        "operations more resilient, so engineers can spend less time firefighting and more time "
+        "building."
     ),
 }
 
