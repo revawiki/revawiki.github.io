@@ -54,7 +54,7 @@
         <p class="hero-title">{{ profile.title }}</p>
         <p class="hero-location">{{ profile.location }}</p>
         <nav class="cta-row">{{ cta_icons() }}</nav>
-        <a class="resume-cta" href="{{ profile.resume }}" target="_blank" rel="noopener" download>{{ icon("resume") }} Download Resume for more</a>
+        <a class="resume-cta" href="{{ profile.resume }}" target="_blank" rel="noopener" download>{{ icon("resume") }} Download Resume</a>
       </div>
     </div>
   </header>
@@ -161,10 +161,17 @@
             <p class="job-narrative">{{ job.narrative }}</p>
             {% if job.stack %}
             <details class="job-stack">
-              <summary>Tech stack used</summary>
-              <ul class="tag-list">
-                {% for s in job.stack %}<li>{{ s }}</li>{% endfor %}
-              </ul>
+              <summary>Tech stack managed</summary>
+              <div class="stack-rows">
+                {% for group in job.stack %}
+                <div class="stack-row">
+                  <p class="stack-group">{{ group.category }}</p>
+                  <ul class="tag-list">
+                    {% for item in group['items'] %}<li>{{ item }}</li>{% endfor %}
+                  </ul>
+                </div>
+                {% endfor %}
+              </div>
             </details>
             {% endif %}
             {% if job.featured_link %}

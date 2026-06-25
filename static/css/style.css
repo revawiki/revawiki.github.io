@@ -44,7 +44,7 @@ h3 { font-size: 1.15rem; }
 h4 { font-size: 1rem; margin-top: 28px; color: var(--c-grey-800); }
 h5 { font-size: 0.95rem; }
 
-p { margin: 0 0 12px; color: var(--c-grey-800); }
+p { margin: 0 0 12px; color: var(--c-grey-800); text-align: justify; }
 
 a { color: var(--c-black); text-decoration: none; border-bottom: 1px solid var(--c-grey-400); }
 a:hover { border-bottom-color: var(--c-black); }
@@ -70,10 +70,10 @@ a:hover { border-bottom-color: var(--c-black); }
 .hero-title { font-size: 1.15rem; color: var(--c-grey-200); margin-bottom: 4px; }
 .hero-location { color: var(--c-grey-400); font-size: 0.9rem; margin-bottom: 20px; }
 
-.hero-inner { display: flex; gap: 28px; align-items: center; }
+.hero-inner { display: flex; gap: 28px; align-items: stretch; }
 .hero-photo {
-  width: 110px;
-  height: 140px;
+  width: 150px;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
   object-position: top center;
@@ -81,8 +81,8 @@ a:hover { border-bottom-color: var(--c-black); }
   flex-shrink: 0;
 }
 .hero-photo-fallback {
-  width: 110px;
-  height: 140px;
+  width: 150px;
+  height: 100%;
   border-radius: 8px;
   background: var(--c-grey-800);
   border: 1px solid var(--c-grey-600);
