@@ -11,7 +11,11 @@ PROFILE = {
     "credly": "https://www.credly.com/users/reva-hristo-wiki-fonseca/badges/credly",
     "resume": "static/assets/Reva-Wiki-CV.pdf",
     "photo": None,
-    "summary": "Thriving to become the go-to AIOps expert in Indonesia, one automated workflow at a time.",
+    "summary": (
+        "Thriving to become the go-to AIOps expert in Indonesia, one automated workflow at a time. "
+        "I turn manual, headcount-bound IT operations into resilient, self-optimizing systems, "
+        "blending cloud infrastructure depth with a growing passion for agentic AI."
+    ),
 }
 
 DOMAIN_KNOWLEDGE = [
@@ -114,19 +118,22 @@ EXPERIENCE = [
         "role": "Senior System Engineer",
         "period": "January 2025 – Present",
         "narrative": (
-            "Leading AIOps R&D for one of Indonesia's largest telcos, directing 4 engineers across "
-            "20+ AWS accounts and 10+ Kubernetes clusters. Cut MTTD to 5 min, MTTR to 10 min, "
-            "prevented IDR 79B+ in losses, and unified workflows into one agentic AI system."
+            "Leading AIOps R&D for one of Indonesia's largest telcos, directing an engineering team "
+            "across a sizeable AWS and Kubernetes footprint. Cut incident response time, prevented "
+            "major revenue loss, and unified workflows into one agentic AI system."
         ),
         "stack": [
-            {"category": "Cloud", "items": ["AWS", "Amazon RDS", "Amazon Linux"]},
-            {"category": "Scripting", "items": ["Python", "Bash"]},
-            {"category": "AI & RPA", "items": ["Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "n8n", "Power Platform", "Dify"]},
-            {"category": "Containers & Orchestration", "items": ["Docker", "Containerd", "Kubernetes", "Amazon EKS", "Amazon ECS"]},
-            {"category": "IaC & CMT", "items": ["Terraform", "Amazon CloudFormation", "Helm", "Amazon SSM"]},
-            {"category": "SCM & CI/CD", "items": ["GitLab Enterprise", "AWS CodeCommit", "GitLab Runner", "Jenkins", "Flux"]},
+            {"category": "AI Automation", "items": ["Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "n8n", "Power Platform", "Dify"]},
+            {"category": "Cloud", "items": ["AWS"]},
+            {"category": "Database", "items": ["Amazon RDS"]},
+            {"category": "Operating System", "items": ["Amazon Linux"]},
+            {"category": "Scripting & Languages", "items": ["Python", "Bash"]},
+            {"category": "Orchestration & Containers", "items": ["Docker", "Containerd", "Kubernetes", "Amazon EKS", "Amazon ECS"]},
+            {"category": "IaC & Config Management", "items": ["Terraform", "Amazon CloudFormation", "Helm", "Amazon SSM"]},
+            {"category": "CI/CD", "items": ["GitLab Enterprise", "AWS CodeCommit", "GitLab Runner", "Jenkins", "Flux", "Amazon ECR"]},
             {"category": "Observability", "items": ["Grafana", "Datadog", "Amazon CloudWatch", "Fluentbit", "OpenTelemetry", "Prometheus"]},
-            {"category": "Docs & Collab", "items": ["SharePoint", "Microsoft Teams", "WhatsApp"]},
+            {"category": "ITSM & Documentation", "items": ["SharePoint"]},
+            {"category": "Collaboration", "items": ["Microsoft Teams", "WhatsApp"]},
         ],
         "featured_link": True,
     },
@@ -137,20 +144,22 @@ EXPERIENCE = [
         "role": "Senior DevOps Engineer",
         "period": "June 2024 – December 2024",
         "narrative": (
-            "Maintained SLAs for HM Sampoerna's app portfolio, leading 7 engineers through a "
-            "console-to-Terraform migration and standardizing 40+ AWS accounts to PMI compliance. "
-            "Cut SEA cloud costs ~55% and automated away daily repetitive tasks via Jenkins."
+            "Maintained SLAs for HM Sampoerna's app portfolio, leading an engineering group through "
+            "a console-to-Terraform migration and standardizing legacy AWS accounts to PMI "
+            "compliance. Cut SEA cloud costs and automated daily repetitive tasks via Jenkins."
         ),
         "stack": [
-            {"category": "Cloud", "items": ["AWS", "Amazon Aurora MySQL", "Amazon DocumentDB", "Amazon Linux"]},
-            {"category": "Scripting", "items": ["Python", "Bash", "PowerShell"]},
-            {"category": "Containers & Orchestration", "items": ["Docker", "Kubernetes", "Amazon ECS"]},
-            {"category": "IaC & CMT", "items": ["Terraform", "Amazon SSM"]},
-            {"category": "Secrets & Access", "items": ["Amazon Secrets Manager", "Vault", "OpenVPN"]},
-            {"category": "SCM & CI/CD", "items": ["Bitbucket", "Jenkins", "CloudBees CI"]},
-            {"category": "Security Scanning", "items": ["Soteri", "Polaris", "Trivy", "Jfrog Xray", "Sonarqube", "Invicti", "Brinqa"]},
+            {"category": "Cloud", "items": ["AWS"]},
+            {"category": "Database", "items": ["Amazon Aurora MySQL", "Amazon DocumentDB"]},
+            {"category": "Operating System", "items": ["Amazon Linux"]},
+            {"category": "Scripting & Languages", "items": ["Python", "Bash", "PowerShell"]},
+            {"category": "Orchestration & Containers", "items": ["Docker", "Kubernetes", "Amazon ECS"]},
+            {"category": "IaC & Config Management", "items": ["Terraform", "Amazon SSM"]},
+            {"category": "DevSecOps", "items": ["Amazon Secrets Manager", "Vault", "OpenVPN", "Soteri", "Polaris", "Trivy", "Jfrog Xray", "Sonarqube", "Invicti", "Brinqa"]},
+            {"category": "CI/CD", "items": ["Bitbucket", "Jenkins", "CloudBees CI", "Amazon ECR", "Jfrog Artifactory"]},
             {"category": "Observability", "items": ["Grafana", "Elastic", "Amazon CloudWatch", "New Relic", "PagerDuty", "OpsGenie"]},
-            {"category": "Docs & ITSM", "items": ["Confluence", "SharePoint", "Microsoft Teams", "ServiceNow"]},
+            {"category": "ITSM & Documentation", "items": ["Confluence", "SharePoint", "ServiceNow"]},
+            {"category": "Collaboration", "items": ["Microsoft Teams"]},
         ],
     },
     {
@@ -160,21 +169,22 @@ EXPERIENCE = [
         "role": "DevOps Lead",
         "period": "April 2022 – May 2024",
         "narrative": (
-            "Promoted to lead a 4-engineer DevOps team for Telkom Netmonk suite, architecting a "
-            "multi-tenant AWS ECS platform off 100+ EC2 instances. Migrated Singapore to Jakarta "
-            "for ~70% cost cut, sped deployments from 10 to 5 minutes via Bitbucket CI/CD."
+            "Promoted to lead a DevOps team for Telkom's Netmonk suite, architecting a multi-tenant "
+            "AWS ECS platform off legacy virtual machine deployments. Migrated Singapore to Jakarta "
+            "for major cost savings, and sped up deployments via Bitbucket CI/CD."
         ),
         "stack": [
-            {"category": "Cloud", "items": ["AWS", "Digital Ocean", "Aiven", "MongoDB Atlas", "Amazon RDS"]},
-            {"category": "OS & Database", "items": ["Ubuntu", "Amazon Linux", "Windows Server", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Kafka", "OpenSearch"]},
-            {"category": "Scripting", "items": ["Python", "Bash", "Go"]},
-            {"category": "Containers & Orchestration", "items": ["Docker", "Kubernetes", "Amazon ECS", "Amazon EKS"]},
-            {"category": "IaC & CMT", "items": ["Terraform", "Ansible", "Consul"]},
-            {"category": "Secrets & Access", "items": ["Vault", "Teleport", "AWS Systems Manager"]},
-            {"category": "SCM & CI/CD", "items": ["Bitbucket", "GitLab", "Bitbucket Pipeline", "Jenkins"]},
-            {"category": "Security Scanning", "items": ["Nuclei", "git-secrets", "Dependency Check", "Snyk", "Trivy", "Sonarqube", "OWASP ZAP", "Nikto", "Faraday", "DefectDojo"]},
+            {"category": "Cloud", "items": ["AWS", "Digital Ocean"]},
+            {"category": "Database", "items": ["Aiven", "MongoDB Atlas", "Amazon RDS", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Kafka", "OpenSearch"]},
+            {"category": "Operating System", "items": ["Ubuntu", "Amazon Linux", "Windows Server"]},
+            {"category": "Scripting & Languages", "items": ["Python", "Bash", "Go"]},
+            {"category": "Orchestration & Containers", "items": ["Docker", "Kubernetes", "Amazon ECS", "Amazon EKS"]},
+            {"category": "IaC & Config Management", "items": ["Terraform", "Ansible", "Consul", "AWS Systems Manager"]},
+            {"category": "DevSecOps", "items": ["Vault", "Teleport", "Nuclei", "git-secrets", "Dependency Check", "Snyk", "Trivy", "Sonarqube", "OWASP ZAP", "Nikto", "Faraday", "DefectDojo"]},
+            {"category": "CI/CD", "items": ["Bitbucket", "GitLab", "Bitbucket Pipeline", "Jenkins", "Dockerhub"]},
             {"category": "Observability", "items": ["Grafana", "Datadog"]},
-            {"category": "Docs & Collab", "items": ["Confluence", "Notion", "Jira", "Slack", "Discord"]},
+            {"category": "ITSM & Documentation", "items": ["Confluence", "Notion", "Jira"]},
+            {"category": "Collaboration", "items": ["Slack", "Discord"]},
         ],
     },
     {
@@ -185,13 +195,15 @@ EXPERIENCE = [
         "period": "August 2020 – April 2022",
         "narrative": (
             "Supported Netmonk clients from small businesses to large enterprises with installs, "
-            "configuration, and troubleshooting. Built Terraform/Ansible pipelines cutting deploy "
-            "time to 10 minutes, and Grafana observability cutting MTTR to 15 minutes."
+            "configuration, and troubleshooting. Built Terraform/Ansible pipelines that sped up "
+            "deployments, and Grafana observability that improved incident response."
         ),
         "stack": [
-            {"category": "Cloud & OS", "items": ["AWS", "Ubuntu", "Windows Server"]},
+            {"category": "Cloud", "items": ["AWS"]},
+            {"category": "Operating System", "items": ["Ubuntu", "Windows Server"]},
             {"category": "Observability", "items": ["Grafana"]},
-            {"category": "Collab & ITSM", "items": ["Jira", "Slack", "Trello"]},
+            {"category": "ITSM & Documentation", "items": ["Jira", "Trello"]},
+            {"category": "Collaboration", "items": ["Slack"]},
         ],
     },
     {
@@ -201,13 +213,14 @@ EXPERIENCE = [
         "role": "System Administrator",
         "period": "June 2020 – August 2020",
         "narrative": (
-            "Built a 50-node HPC lab from scratch for BRIN's Aviation Technology Research Center, "
-            "planning network topology, repairing 20+ broken nodes to avoid new hardware spend, "
-            "and automating OS install and configuration across the cluster."
+            "Built an HPC lab from scratch for BRIN's Aviation Technology Research Center, planning "
+            "network topology, repairing broken nodes to avoid new hardware spend, and automating "
+            "OS install and configuration across the cluster."
         ),
         "stack": [
-            {"category": "OS & CMT", "items": ["CentOS", "Ubuntu", "Windows 10", "Kickstart", "C3 (Cluster Control)"]},
-            {"category": "Hardware & Network", "items": ["Supermicro", "Cisco Switch", "LAN", "WLAN"]},
+            {"category": "Operating System", "items": ["CentOS", "Ubuntu", "Windows 10"]},
+            {"category": "IaC & Config Management", "items": ["Kickstart", "C3 (Cluster Control)"]},
+            {"category": "Networking & Hardware", "items": ["Supermicro", "Cisco Switch", "LAN", "WLAN"]},
         ],
     },
     {
@@ -217,13 +230,14 @@ EXPERIENCE = [
         "role": "Junior System Administrator",
         "period": "February 2019 – December 2019",
         "narrative": (
-            "Helped maintain a 40+ node HPC lab at BRIN's Informatics Research Center, repairing "
-            "damaged nodes, automating new node installs, and rolling out Puppet configuration "
-            "management for consistent infrastructure state."
+            "Helped maintain an HPC lab at BRIN's Informatics Research Center, repairing damaged "
+            "nodes, automating new node installs, and rolling out Puppet configuration management "
+            "for consistent infrastructure state."
         ),
         "stack": [
-            {"category": "OS & CMT", "items": ["CentOS", "Ubuntu", "Windows Hyper-V", "Puppet", "Kickstart", "C3 (Cluster Control)", "Foreman"]},
-            {"category": "Network", "items": ["Cisco Switch", "Aruba Switch", "MikroTik", "LAN", "WLAN"]},
+            {"category": "Operating System", "items": ["CentOS", "Ubuntu", "Windows Hyper-V"]},
+            {"category": "IaC & Config Management", "items": ["Puppet", "Kickstart", "C3 (Cluster Control)", "Foreman"]},
+            {"category": "Networking & Hardware", "items": ["Cisco Switch", "Aruba Switch", "MikroTik", "LAN", "WLAN"]},
         ],
     },
     {
@@ -233,13 +247,13 @@ EXPERIENCE = [
         "role": "IT Support Lead",
         "period": "July 2018 – September 2018",
         "narrative": (
-            "Led a 5-person IT support team across 50+ end-devices at Pakansari Stadium during "
-            "the 2018 Asian Games, installing, testing, and auditing devices to keep every match "
-            "running smoothly."
+            "Led an on-site IT support team across end-devices at Pakansari Stadium during the "
+            "Asian Games, installing, testing, and auditing devices to keep every match running "
+            "smoothly."
         ),
         "stack": [
-            {"category": "OS", "items": ["Windows 10", "Windows 7"]},
-            {"category": "End-Devices & Network", "items": ["Canon Printers", "HP Printers & Copiers", "HP Laptops & AIO PCs", "TP-Link Access Point", "LAN", "WLAN"]},
+            {"category": "Operating System", "items": ["Windows 10", "Windows 7"]},
+            {"category": "Networking & Hardware", "items": ["Canon Printers", "HP Printers & Copiers", "HP Laptops & AIO PCs", "TP-Link Access Point", "LAN", "WLAN"]},
         ],
     },
 ]
