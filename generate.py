@@ -1,14 +1,3 @@
-"""
-Static site generator for the portfolio.
-
-Renders templates/index.html.j2 with data from content.py, then writes the
-result plus static assets into docs/ — the folder GitHub Pages serves when
-configured to deploy from the main branch's /docs directory.
-
-Usage:
-    python generate.py
-"""
-
 import shutil
 from pathlib import Path
 
@@ -44,7 +33,6 @@ def build():
         shutil.rmtree(output_static)
     shutil.copytree(STATIC_DIR, output_static)
 
-    # Prevent GitHub Pages from running Jekyll over the output.
     (OUTPUT_DIR / ".nojekyll").touch()
 
     print(f"Built site -> {OUTPUT_DIR / 'index.html'}")

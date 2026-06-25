@@ -1,12 +1,3 @@
-"""
-Content data for the portfolio site.
-Edit this file to update text shown on the site, then re-run `python generate.py`.
-
-NDA note: only information already present on the public CV / the AIOps deck's
-conceptual/strategic slides is used here. No client-internal screenshots, tool
-UIs, dashboards, or data are referenced.
-"""
-
 PROFILE = {
     "name": "Reva Hristo Wiki Fonseca",
     "title": "IT Infrastructure & AIOps Specialist",
@@ -42,11 +33,6 @@ CORE_COMPETENCIES = [
     },
 ]
 
-# ---------------------------------------------------------------------------
-# Featured project — derived only from the conceptual / strategic slides of
-# the AIOps deck (problem statement, pillars, R&R mapping, path forward).
-# No internal screenshots or client-specific tooling details are included.
-# ---------------------------------------------------------------------------
 FEATURED_PROJECT = {
     "name": "Unified L1 Autopilot",
     "tagline": (
@@ -113,10 +99,6 @@ FEATURED_PROJECT = {
     "note": "Figures reflect actual client adoption; results may vary based on internal scope.",
 }
 
-# ---------------------------------------------------------------------------
-# Experience — each entry keeps the original CV bullets, plus one expanded
-# narrative paragraph synthesized strictly from those same disclosed facts.
-# ---------------------------------------------------------------------------
 EXPERIENCE = [
     {
         "company": "Tech Mahindra",
