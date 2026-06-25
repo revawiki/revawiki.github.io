@@ -5,242 +5,224 @@ PROFILE = {
     "email": "reva.wiki@gmail.com",
     "linkedin": "https://linkedin.com/in/revawiki",
     "github": "https://github.com/revawiki",
+    "twitter": "https://x.com/revawiki",
+    "instagram": "https://www.instagram.com/revawiki/",
+    "whatsapp": "https://wa.me/6285714602966",
+    "credly": "https://www.credly.com/users/reva-hristo-wiki-fonseca/badges/credly",
     "summary": (
-        "Seasoned engineer with 7+ years of experience designing, managing, and optimizing "
-        "enterprise-scale cloud infrastructure across multiple industries, supporting critical "
-        "B2B and B2C production applications serving millions of users. Proven track record "
-        "delivering AI-driven automation transformation for IT operations, most notably "
-        "architecting a multi-agent AI system covering 20+ AWS accounts and 10+ Kubernetes "
-        "clusters for Indonesia's largest telco cloud operations, recognized as a stellar AI "
-        "enablement example across the IT infrastructure department. Currently directing AIOps "
-        "R&D to streamline cloud operations through AI and automation for consistent SLA "
-        "attainment."
+        "IT Infrastructure & AIOps engineer with 7+ years architecting and operating "
+        "enterprise-scale cloud infrastructure for B2B and B2C production systems serving "
+        "millions of users. Currently leading AIOps R&D for Indonesia's largest telco cloud "
+        "operation, architecting a multi-agent AI system spanning 20+ AWS accounts and 10+ "
+        "Kubernetes clusters. Focused on turning manual, headcount-bound operations into "
+        "resilient, self-optimizing systems."
     ),
 }
 
-CORE_COMPETENCIES = [
+STACK = [
     {
         "group": "AIOps & AI Automation",
-        "items": ["Agent Swarm", "RAG & Knowledge Base", "MCP Server", "Human-in-the-Loop", "Guardrails"],
+        "items": ["Agent Swarm", "RAG & Knowledge Base", "MCP Server", "Human-in-the-Loop",
+                   "Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "Dify",
+                   "n8n", "UiPath", "Power Platform"],
     },
     {
-        "group": "Cloud Infrastructure",
-        "items": ["Container Orchestration", "Hybrid Architecture", "Infrastructure as Code", "Cost Optimization"],
+        "group": "Cloud Platforms",
+        "items": ["AWS", "Azure", "GCP", "Alibaba Cloud", "Digital Ocean"],
     },
     {
-        "group": "DevOps",
-        "items": ["CI/CD Pipeline", "GitOps Workflow", "Zero-Downtime Deployment", "Monitoring, Logging & Traceability"],
+        "group": "Infrastructure & Orchestration",
+        "items": ["Kubernetes", "Docker", "Terraform", "Ansible", "Puppet"],
+    },
+    {
+        "group": "CI/CD & DevOps",
+        "items": ["GitOps Workflow", "Zero-Downtime Deployment", "Bitbucket Pipeline", "Jenkins", "GitLab"],
+    },
+    {
+        "group": "Observability",
+        "items": ["Grafana", "Datadog", "New Relic", "Elastic", "Prometheus", "PagerDuty"],
+    },
+    {
+        "group": "Security & DevSecOps",
+        "items": ["Guardrails", "Sonarqube", "Snyk", "Trivy", "Jfrog", "Teleport", "Vault", "Burpsuite"],
+    },
+    {
+        "group": "Scripting & Languages",
+        "items": ["Python", "Bash", "PowerShell", "Go"],
+    },
+    {
+        "group": "ITSM & Documentation",
+        "items": ["ServiceNow", "BMC Remedy", "Confluence", "Notion", "SharePoint"],
     },
 ]
 
-FEATURED_PROJECT = {
-    "name": "Unified L1 Autopilot",
-    "tagline": (
-        "An AI-driven operations layer transforming traditional IT Ops from reactive, "
-        "headcount-bound ticket handling into autonomous, human-governed triage and remediation."
-    ),
-    "role": "R&D Lead, Tech Mahindra — Jan 2025 to Present",
-    "problem": (
-        "Scaling enterprise IT operations at the pace of the business inevitably runs into a "
-        "‘human ceiling’: operational reliability becomes hostage to manual triage and the "
-        "limits of human fatigue. This creates a ‘linear trap’ where growth is tethered "
-        "to headcount, increasing systemic risk and operational noise with every new integration. "
-        "I led the R&D effort to break that trap by shifting from manual, ticket-driven operations "
-        "to AI-supported, and eventually autonomous, orchestration."
-    ),
-    "pillars": [
-        {
-            "title": "Intelligent Triage & Predictive Risk Mitigation",
-            "desc": (
-                "Real-time telemetry analysis pinpoints root causes automatically, converting "
-                "reactive troubleshooting into predictive, data-driven detection, and "
-                "neutralizing misconfigurations before they impact service availability."
-            ),
-        },
-        {
-            "title": "Fiscal Governance & Benchmarking",
-            "desc": (
-                "Automated optimization workflows and resource scheduling realize significant "
-                "compute savings, backed by continuous performance benchmarking against "
-                "architectural best practices."
-            ),
-        },
-        {
-            "title": "Autonomous Security & Self-Healing",
-            "desc": (
-                "Continuous compliance checks against security and configuration baselines "
-                "eliminate manual audit cycles, scaling from automated patching toward "
-                "autonomous issue remediation."
-            ),
-        },
-        {
-            "title": "Augmented Engineering Workflows",
-            "desc": (
-                "Context-aware knowledge retrieval auto-generates documentation (MOPs, "
-                "playbooks, RCAs), while every AI-proposed action is queued for human review "
-                "before execution — keeping institutional control intact."
-            ),
-        },
-    ],
-    "approach": (
-        "Rather than building a single monolithic bot, the Autopilot is structured around the "
-        "same roles and responsibilities a mature IT operations team already has — a "
-        "Technical Operations Engineer, a Service Desk Analyst, a SOC Engineer, a Technical "
-        "Writer, and a FinOps Analyst — each mapped to a distinct, scoped capability. This "
-        "keeps coverage systematic and accountability clear as the system grows, following a "
-        "deliberate crawl-walk-run rollout rather than a single 'big bang' deployment."
-    ),
-    "outcomes": [
-        {"metric": "4x", "label": "Faster MTTR via AI-driven autonomous diagnostics"},
-        {"metric": "60%", "label": "Compute cost reduction from automated resource governance"},
-        {"metric": "IDR 79B+", "label": "Annual revenue loss prevented via automated failover"},
-        {"metric": "75%", "label": "Toil elimination on backup and recovery test cycles"},
-    ],
-    "note": "Figures reflect actual client adoption; results may vary based on internal scope.",
-}
+FEATURED_WORK = [
+    {
+        "name": "Unified L1 Autopilot",
+        "tagline": "An AI-driven operations layer turning reactive IT Ops into autonomous, human-governed triage and remediation.",
+        "role": "R&D Lead, Tech Mahindra — Jan 2025 to Present",
+        "problem": (
+            "Scaling enterprise IT operations at the pace of the business inevitably runs into a "
+            "‘human ceiling’: operational reliability becomes hostage to manual triage and the "
+            "limits of human fatigue. This creates a ‘linear trap’ where growth is tethered "
+            "to headcount, increasing systemic risk and operational noise with every new integration. "
+            "I led the R&D effort to break that trap by shifting from manual, ticket-driven operations "
+            "to AI-supported, and eventually autonomous, orchestration."
+        ),
+        "pillars": [
+            {
+                "title": "Intelligent Triage & Predictive Risk Mitigation",
+                "desc": (
+                    "Real-time telemetry analysis pinpoints root causes automatically, converting "
+                    "reactive troubleshooting into predictive, data-driven detection, and "
+                    "neutralizing misconfigurations before they impact service availability."
+                ),
+            },
+            {
+                "title": "Fiscal Governance & Benchmarking",
+                "desc": (
+                    "Automated optimization workflows and resource scheduling realize significant "
+                    "compute savings, backed by continuous performance benchmarking against "
+                    "architectural best practices."
+                ),
+            },
+            {
+                "title": "Autonomous Security & Self-Healing",
+                "desc": (
+                    "Continuous compliance checks against security and configuration baselines "
+                    "eliminate manual audit cycles, scaling from automated patching toward "
+                    "autonomous issue remediation."
+                ),
+            },
+            {
+                "title": "Augmented Engineering Workflows",
+                "desc": (
+                    "Context-aware knowledge retrieval auto-generates documentation (MOPs, "
+                    "playbooks, RCAs), while every AI-proposed action is queued for human review "
+                    "before execution — keeping institutional control intact."
+                ),
+            },
+        ],
+        "approach": (
+            "Rather than building a single monolithic bot, the Autopilot is structured around the "
+            "same roles and responsibilities a mature IT operations team already has — a "
+            "Technical Operations Engineer, a Service Desk Analyst, a SOC Engineer, a Technical "
+            "Writer, and a FinOps Analyst — each mapped to a distinct, scoped capability. This "
+            "keeps coverage systematic and accountability clear as the system grows, following a "
+            "deliberate crawl-walk-run rollout rather than a single 'big bang' deployment."
+        ),
+        "outcomes": [
+            {"metric": "4x", "label": "Faster MTTR via AI-driven autonomous diagnostics"},
+            {"metric": "60%", "label": "Compute cost reduction from automated resource governance"},
+            {"metric": "IDR 79B+", "label": "Annual revenue loss prevented via automated failover"},
+            {"metric": "75%", "label": "Toil elimination on backup and recovery test cycles"},
+        ],
+        "note": "Figures reflect actual client adoption; results may vary based on internal scope.",
+    },
+]
 
 EXPERIENCE = [
     {
         "company": "Tech Mahindra",
+        "company_url": "https://www.techmahindra.com",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=techmahindra.com",
         "role": "Senior System Engineer",
         "period": "January 2025 – Present",
+        "location": "Jakarta, Indonesia",
         "narrative": (
             "Directing AIOps R&D for one of Indonesia's largest telco cloud operations, leading "
             "a 4-engineer team to design AI-driven automation across 20+ AWS accounts and 10+ "
-            "Kubernetes clusters. The work progressed in stages: first building automatic anomaly "
-            "detection to catch issues before they escalate, then layering AI-assisted root-cause "
-            "analysis on top, then extending into pre-deployment safeguards and revenue-protecting "
-            "failover automation. Recognized by Tech Mahindra's Chief People Officer as Innovator "
-            "of the Month for client-acknowledged AI enablement impact."
+            "Kubernetes clusters — covering anomaly detection, AI-assisted root-cause analysis, "
+            "pre-deployment safeguards, and revenue-protecting failover automation."
         ),
-        "bullets": [
-            "Led R&D initiative with a team of 4 engineers to develop AI-driven automation workflows that streamline day-to-day cloud operations on production workload across 20+ AWS accounts and 10+ Kubernetes clusters.",
-            "Built an automatic infrastructure anomaly detection which reduced MTTD from ~20 to ≤ 5 minutes; further iteration integrated AI-assisted first-level RCA which reduced MTTR from ~30 to ≤ 10 minutes.",
-            "Introduced an automatic MOP (Method-of-Procedure) checker that flags invalid steps pre-deployment, reducing review cycles from ~60 to ~20 minutes and increasing team throughput from 1-2 to 4+ change requests per day.",
-            "Developed an automatic AWS Direct Connect failover solution that eliminated manual switchover procedures, preventing IDR 79B+ in yearly revenue loss from recurrent fiber optic outage incidents.",
-            "Architected a unified AI operations ecosystem integrating RAG knowledge base, MCP servers, and human-in-the-loop governance, establishing a scalable foundation for the CloudOps AI development continuation.",
-            "Recognized as Innovator of the Month by Tech Mahindra's Chief People Officer in June 2025, driven by client-acknowledged AI enablement initiatives in cloud operations.",
-        ],
+        "stack": ["AWS", "Kubernetes", "RAG & Knowledge Base", "MCP Server", "Agent Swarm",
+                    "Human-in-the-Loop", "Grafana", "Python"],
         "featured_link": True,
     },
     {
         "company": "PT HM Sampoerna Tbk.",
+        "company_url": "https://www.sampoerna.com",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=sampoerna.com",
         "role": "Senior DevOps Engineer",
         "period": "June 2024 – December 2024",
+        "location": "Jakarta, Indonesia",
         "narrative": (
-            "Brought in to bring order to inherited infrastructure: led 7 engineers through a "
-            "console-to-Terraform migration for highly critical applications, enforcing a "
-            "consistent GitOps branching strategy across environments. In parallel, audited 40+ "
-            "legacy AWS accounts against global Philip Morris International security and "
-            "governance standards, and drove SEA-region cost optimization through rightsizing "
-            "and reservation strategy — freeing budget while also automating away repetitive "
-            "daily service-request toil."
+            "Led a 7-engineer team through a console-to-Terraform migration with consistent GitOps "
+            "branching, standardized 40+ legacy AWS accounts to global governance standards, and "
+            "drove SEA-region cost optimization while automating away recurring service-request toil."
         ),
-        "bullets": [
-            "Led a team of 7 engineers in migrating highly critical application infrastructure from console-based to Terraform, enforcing consistent GitOps branching strategy across dev, staging, and production environments.",
-            "Evaluated and standardized inherited legacy AWS configurations across 40+ accounts, ensuring alignment with global Philip Morris International security and governance standards.",
-            "Reduced AWS infrastructure costs for SEA region by ~55% through rightsizing, reservation optimization, and elimination of redundant and unused resources.",
-            "Eliminated 1-2 hours of daily repetitive service request tasks through targeted Jenkins automations, improving team operational efficiency by freeing team capacity for higher-value work.",
-        ],
+        "stack": ["AWS", "Terraform", "GitOps Workflow", "Jenkins", "Security & Governance"],
     },
     {
         "company": "PT Telkom Indonesia Tbk",
+        "company_url": "https://www.telkom.co.id",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=telkom.co.id",
         "role": "DevOps Lead",
         "period": "April 2022 – May 2024",
+        "location": "Jakarta, Indonesia",
         "narrative": (
-            "Promoted to lead the DevOps initiative, directing 4 engineers through an "
-            "architectural shift from 100+ monolithic EC2 deployments to a scalable, "
-            "multi-tenant AWS ECS platform. The transition included a full regional migration "
-            "from Singapore to Jakarta that cut infrastructure costs by ~70%, alongside a "
-            "Bitbucket CI/CD rollout that halved deployment time."
+            "Promoted to lead a 4-engineer DevOps team, architecting a multi-tenant AWS ECS "
+            "platform off 100+ monolithic EC2 deployments, with a regional migration and CI/CD "
+            "rollout that cut both infrastructure cost and deployment time substantially."
         ),
-        "bullets": [
-            "Promoted to led the DevOps initiative leading a team of 4 engineers to architect an AWS ECS-based platform transitioning from 100+ monolithic AWS EC2 deployments to a scalable multi-tenancy cloud-native setups.",
-            "Reduced AWS infrastructure costs by ~70% by rearchitecting regional migration from Singapore to Jakarta.",
-            "Cut deployment time from ~10 to ~5 minutes through Bitbucket CI/CD pipeline implementation.",
-        ],
+        "stack": ["AWS ECS", "Bitbucket Pipeline", "Cloud Migration"],
     },
     {
         "company": "PT Telkom Indonesia Tbk",
+        "company_url": "https://www.telkom.co.id",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=telkom.co.id",
         "role": "Technical Support Engineer",
         "period": "August 2020 – April 2022",
+        "location": "Jakarta, Indonesia",
         "narrative": (
-            "Supported the Netmonk incubation as the team's cloud technical lead, building "
-            "Terraform and Ansible-provisioned pipelines that quartered deployment time, and "
-            "introducing Grafana-based observability that halved MTTR — groundwork that "
-            "later justified the move into a full DevOps leadership role."
+            "Supported a cloud incubation initiative, building Terraform and Ansible-provisioned "
+            "pipelines that significantly cut deployment time, and introducing Grafana-based "
+            "observability that improved incident response."
         ),
-        "bullets": [
-            "Reduced deployment time from ~40 to ~10 minutes through Terraform + Ansible provisioned pipelines.",
-            "Reduced MTTR from ~30 to ~15 minutes through implementation of Grafana-based observability system.",
-        ],
+        "stack": ["Terraform", "Ansible", "Grafana"],
     },
     {
         "company": "BRIN — Aviation Technology Research Center",
+        "company_url": "https://www.brin.go.id",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=brin.go.id",
         "role": "System Administrator",
         "period": "June 2020 – August 2020",
+        "location": "Bogor, Indonesia",
         "narrative": (
-            "Took on the rebuild of a legacy HPC lab that had fallen into disrepair, repairing "
-            "20+ broken nodes and restoring research capacity without requiring new hardware "
-            "spend."
+            "Rebuilt a legacy HPC lab by repairing 20+ broken nodes, restoring research capacity "
+            "without new hardware spend."
         ),
-        "bullets": [
-            "Rebuilt legacy HPC lab infrastructure by repairing 20+ broken nodes, avoiding new hardware purchases.",
-        ],
+        "stack": ["HPC Infrastructure", "Hardware Diagnostics"],
     },
     {
         "company": "BRIN — Informatics Research Center",
+        "company_url": "https://www.brin.go.id",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=brin.go.id",
         "role": "Junior System Administrator",
         "period": "February 2019 – December 2019",
+        "location": "Bogor, Indonesia",
         "narrative": (
-            "Brought configuration management discipline to a 40+ node HPC environment by "
-            "rolling out Puppet, replacing ad-hoc manual configuration with consistent, "
-            "repeatable infrastructure state."
+            "Rolled out Puppet-based configuration management across a 40+ node HPC environment, "
+            "replacing ad-hoc manual configuration with consistent, repeatable infrastructure state."
         ),
-        "bullets": [
-            "Implemented configuration management using Puppet, ensuring infra consistency across 40+ HPC nodes.",
-        ],
+        "stack": ["Puppet", "Configuration Management"],
     },
     {
         "company": "PT Griya Mitra Persada",
+        "company_url": "https://www.griyamitrapersada.com",
+        "company_logo": "https://www.google.com/s2/favicons?sz=128&domain=griyamitrapersada.com",
         "role": "IT Support Lead",
         "period": "July 2018 – September 2018",
+        "location": "Bogor, Indonesia",
         "narrative": (
-            "Led a 5-person on-site IT support team responsible for 50+ end-devices through the "
-            "high-stakes, high-visibility Asian Games event — an early lesson in operating "
-            "under pressure with zero tolerance for downtime."
+            "Led a 5-person on-site IT support team across 50+ end-devices through the Asian "
+            "Games event, ensuring zero-downtime operations under high-visibility pressure."
         ),
-        "bullets": [
-            "Achieved smooth operations leading a team of 5 across 50+ end-devices throughout the Asian Games event.",
-        ],
+        "stack": ["IT Support", "End-Device Management"],
     },
 ]
 
 EDUCATION = [
     {"school": "UIN Syarif Hidayatullah Jakarta", "degree": "Bachelor of Computer Science", "year": "2023"},
     {"school": "SMKN 3 Bogor", "degree": "Vocational Diploma in Computer Networks", "year": "2016"},
-]
-
-TECHNICAL_SKILLS = [
-    {"group": "AI Automation", "items": ["Amazon Bedrock", "Microsoft Copilot Studio", "Azure AI Foundry", "Dify", "n8n", "UIPath", "Power Platform"]},
-    {"group": "Cloud", "items": ["AWS", "Azure", "GCP", "Alibaba Cloud", "Digital Ocean"]},
-    {"group": "Orchestration & Containers", "items": ["Kubernetes", "Docker"]},
-    {"group": "IaC & Config Management", "items": ["Terraform", "Ansible", "Puppet"]},
-    {"group": "CI/CD", "items": ["Bitbucket Pipeline", "Jenkins", "GitLab"]},
-    {"group": "Observability", "items": ["Grafana", "Datadog", "New Relic", "Elastic", "Prometheus", "PagerDuty"]},
-    {"group": "DevSecOps", "items": ["Brinqa", "Faradaysec", "Sonarqube", "Snyk", "Trivy", "Jfrog", "Teleport", "Vault", "Burpsuite"]},
-    {"group": "Scripting & Languages", "items": ["Python", "Bash", "PowerShell", "Go"]},
-    {"group": "ITSM & Documentation", "items": ["ServiceNow", "BMC Remedy", "Confluence", "Notion", "SharePoint"]},
-]
-
-CERTIFICATIONS = [
-    "AWS Certified Gen AI Developer – Professional",
-    "AWS Certified DevOps Engineer – Professional",
-    "AWS Certified Solution Architect – Professional",
-    "AWS Certified ML Engineer – Associate",
-    "AWS Certified SysOps Administrator – Associate",
-    "AWS Certified Solution Architect – Associate",
-    "AWS Certified AI Practitioner",
-    "AWS Certified Cloud Practitioner",
-    "Microsoft Certified: Azure Fundamentals",
 ]

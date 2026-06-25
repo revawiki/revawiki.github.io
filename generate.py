@@ -17,11 +17,9 @@ def build():
 
     html = template.render(
         profile=content.PROFILE,
-        core_competencies=content.CORE_COMPETENCIES,
-        project=content.FEATURED_PROJECT,
+        stack=content.STACK,
+        works=content.FEATURED_WORK,
         experience=content.EXPERIENCE,
-        technical_skills=content.TECHNICAL_SKILLS,
-        certifications=content.CERTIFICATIONS,
         education=content.EDUCATION,
     )
 

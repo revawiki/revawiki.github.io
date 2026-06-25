@@ -10,17 +10,43 @@
 </head>
 <body>
 
+{% macro icon(name) -%}
+{%- if name == "mail" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+{%- elif name == "linkedin" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8"/><path d="M12 16v-3a2 2 0 0 1 4 0v3"/><line x1="12" y1="11" x2="12" y2="16"/></svg>
+{%- elif name == "github" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.55 9.55 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.83-2.35 4.68-4.58 4.92.36.31.68.92.68 1.85v2.74c0 .26.18.57.69.48A10 10 0 0 0 12 2z"/></svg>
+{%- elif name == "twitter" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg>
+{%- elif name == "instagram" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+{%- elif name == "whatsapp" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.2-6.4M20 12l-1 5-5-1"/><path d="M8.5 9.5c.3 2.4 2.6 4.7 5 5"/></svg>
+{%- elif name == "credly" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7 21l5-2 5 2-2-7.5"/></svg>
+{%- elif name == "link" -%}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14a4 4 0 0 0 5.66 0l2-2a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-2 2a4 4 0 0 0 5.66 5.66l1-1"/></svg>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro cta_icons() -%}
+<a href="mailto:{{ profile.email }}" class="icon-btn" title="Email" aria-label="Email">{{ icon("mail") }}</a>
+<a href="{{ profile.linkedin }}" class="icon-btn" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">{{ icon("linkedin") }}</a>
+<a href="{{ profile.github }}" class="icon-btn" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">{{ icon("github") }}</a>
+<a href="{{ profile.twitter }}" class="icon-btn" target="_blank" rel="noopener" title="Twitter / X" aria-label="Twitter / X">{{ icon("twitter") }}</a>
+<a href="{{ profile.instagram }}" class="icon-btn" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">{{ icon("instagram") }}</a>
+<a href="{{ profile.whatsapp }}" class="icon-btn" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">{{ icon("whatsapp") }}</a>
+<a href="{{ profile.credly }}" class="icon-btn" target="_blank" rel="noopener" title="Credentials (Credly)" aria-label="Credentials">{{ icon("credly") }}</a>
+{%- endmacro %}
+
   <header class="hero">
     <div class="container">
       <p class="hero-eyebrow">Portfolio</p>
       <h1>{{ profile.name }}</h1>
       <p class="hero-title">{{ profile.title }}</p>
       <p class="hero-location">{{ profile.location }}</p>
-      <nav class="hero-links">
-        <a href="mailto:{{ profile.email }}">Email</a>
-        <a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="{{ profile.github }}" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      <nav class="cta-row">{{ cta_icons() }}</nav>
     </div>
   </header>
 
@@ -30,10 +56,10 @@
       <div class="container">
         <h2>Profile</h2>
         <p class="summary">{{ profile.summary }}</p>
-        <div class="competency-grid">
-          {% for group in core_competencies %}
-          <div class="competency-card">
-            <h3>{{ group.group }}</h3>
+        <div class="stack-rows">
+          {% for group in stack %}
+          <div class="stack-row">
+            <p class="stack-group">{{ group['group'] }}</p>
             <ul class="tag-list">
               {% for item in group['items'] %}<li>{{ item }}</li>{% endfor %}
             </ul>
@@ -43,42 +69,48 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="project">
+    <section class="section section-alt" id="work">
       <div class="container">
-        <h2>Featured Project</h2>
-        <div class="project-card">
-          <div class="project-head">
-            <h3>{{ project.name }}</h3>
-            <p class="project-role">{{ project.role }}</p>
-          </div>
-          <p class="project-tagline">{{ project.tagline }}</p>
+        <h2>Featured Work</h2>
+        <div class="catalog-grid">
+          {% for w in works %}
+          <details class="catalog-card" id="work-{{ loop.index }}">
+            <summary>
+              <h3>{{ w.name }}</h3>
+              <p class="catalog-role">{{ w.role }}</p>
+              <p class="catalog-tagline">{{ w.tagline }}</p>
+              <span class="catalog-expand">View details ↓</span>
+            </summary>
+            <div class="catalog-body">
+              <h4>The Problem</h4>
+              <p>{{ w.problem }}</p>
 
-          <h4>The Problem</h4>
-          <p>{{ project.problem }}</p>
+              <h4>Strategic Pillars</h4>
+              <div class="pillar-grid">
+                {% for pillar in w.pillars %}
+                <div class="pillar-card">
+                  <h5>{{ pillar.title }}</h5>
+                  <p>{{ pillar.desc }}</p>
+                </div>
+                {% endfor %}
+              </div>
 
-          <h4>Strategic Pillars</h4>
-          <div class="pillar-grid">
-            {% for pillar in project.pillars %}
-            <div class="pillar-card">
-              <h5>{{ pillar.title }}</h5>
-              <p>{{ pillar.desc }}</p>
+              <h4>Approach</h4>
+              <p>{{ w.approach }}</p>
+
+              <h4>Outcomes</h4>
+              <div class="outcome-grid">
+                {% for o in w.outcomes %}
+                <div class="outcome-card">
+                  <p class="outcome-metric">{{ o.metric }}</p>
+                  <p class="outcome-label">{{ o.label }}</p>
+                </div>
+                {% endfor %}
+              </div>
+              <p class="catalog-note">{{ w.note }}</p>
             </div>
-            {% endfor %}
-          </div>
-
-          <h4>Approach</h4>
-          <p>{{ project.approach }}</p>
-
-          <h4>Outcomes</h4>
-          <div class="outcome-grid">
-            {% for o in project.outcomes %}
-            <div class="outcome-card">
-              <p class="outcome-metric">{{ o.metric }}</p>
-              <p class="outcome-label">{{ o.label }}</p>
-            </div>
-            {% endfor %}
-          </div>
-          <p class="project-note">{{ project.note }}</p>
+          </details>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -88,52 +120,28 @@
         <h2>Experience</h2>
         <div class="timeline">
           {% for job in experience %}
-          <div class="timeline-item">
-            <div class="timeline-meta">
-              <p class="timeline-period">{{ job.period }}</p>
+          <div class="job-card">
+            <div class="job-company-row">
+              <a href="{{ job.company_url }}" target="_blank" rel="noopener" class="company-logo-link">
+                <img src="{{ job.company_logo }}" alt="" class="company-logo" loading="lazy">
+                <span class="company-name">{{ job.company }}</span>
+              </a>
             </div>
-            <div class="timeline-content">
-              <h3>{{ job.role }}</h3>
-              <p class="timeline-company">{{ job.company }}</p>
-              <p class="timeline-narrative">{{ job.narrative }}</p>
-              <details class="timeline-details">
-                <summary>Key achievements</summary>
-                <ul>
-                  {% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}
-                </ul>
-              </details>
-              {% if job.featured_link %}
-              <a class="project-jump" href="#project">View the Unified L1 Autopilot project ↑</a>
-              {% endif %}
-            </div>
+            <h3>{{ job.role }}</h3>
+            <p class="job-meta">{{ job.period }} | {{ job.location }}</p>
+            <p class="job-narrative">{{ job.narrative }}</p>
+            <details class="job-stack">
+              <summary>Stack used</summary>
+              <ul class="tag-list">
+                {% for s in job.stack %}<li>{{ s }}</li>{% endfor %}
+              </ul>
+            </details>
+            {% if job.featured_link %}
+            <a class="project-jump" href="#work">See featured work ↑</a>
+            {% endif %}
           </div>
           {% endfor %}
         </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="skills">
-      <div class="container">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          {% for group in technical_skills %}
-          <div class="skills-row">
-            <p class="skills-group">{{ group.group }}</p>
-            <ul class="tag-list">
-              {% for item in group['items'] %}<li>{{ item }}</li>{% endfor %}
-            </ul>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="certifications">
-      <div class="container">
-        <h2>Certifications</h2>
-        <ul class="cert-list">
-          {% for cert in certifications %}<li>{{ cert }}</li>{% endfor %}
-        </ul>
       </div>
     </section>
 
@@ -157,11 +165,7 @@
   <footer class="footer">
     <div class="container">
       <p>{{ profile.name }} — {{ profile.title }}</p>
-      <nav class="hero-links">
-        <a href="mailto:{{ profile.email }}">Email</a>
-        <a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="{{ profile.github }}" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      <nav class="cta-row">{{ cta_icons() }}</nav>
     </div>
   </footer>
 
