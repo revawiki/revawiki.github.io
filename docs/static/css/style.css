@@ -260,7 +260,6 @@ a:hover { border-bottom-color: var(--c-black); }
   color: var(--c-black);
   margin-top: 4px;
 }
-.job-stack .tag-list { margin-top: 10px; }
 .project-jump { display: inline-block; margin-top: 10px; font-size: 0.85rem; }
 
 /* Education */

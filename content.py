@@ -13,8 +13,8 @@ PROFILE = {
     "photo": None,
     "summary": (
         "Thriving to become the go-to AIOps expert in Indonesia, one automated workflow at a time. "
-        "I turn manual, headcount-bound IT operations into resilient, self-optimizing systems, "
-        "blending cloud infrastructure depth with a growing passion for agentic AI."
+        "Still learning the ropes of agentic AI, leaning on years of cloud infrastructure experience "
+        "to make IT operations a little less manual along the way."
     ),
 }
 
@@ -146,8 +146,8 @@ EXPERIENCE = [
         "narrative": (
             "Maintained SLAs for HM Sampoerna's app portfolio, leading an engineering group through "
             "a console-to-Terraform migration and standardizing legacy AWS accounts to Philip "
-            "Morris International compliance. Cut SEA cloud costs and automated daily repetitive "
-            "tasks via Jenkins."
+            "Morris International compliance. Cut SEA region cloud costs and automated daily "
+            "repetitive tasks via Jenkins."
         ),
         "stack": [
             {"category": "Cloud", "items": ["AWS"]},
